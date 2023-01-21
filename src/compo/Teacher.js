@@ -7,7 +7,7 @@ export default function Teacher()
     const context=useContext(Context)
     return(
         <>
-        <Container>
+        <Container className="teacher">
         
 
         <Row xs="3">

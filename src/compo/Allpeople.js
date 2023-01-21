@@ -1,9 +1,9 @@
 import { useContext,useEffect} from 'react'
-import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import {Container,Row,Col} from 'reactstrap'
 import CardComponent from './Card'
 import Context from './Context'
+import { Button,Space } from 'antd';
 
 
 export default function Allpeople()
@@ -20,9 +20,14 @@ export default function Allpeople()
 
     return(
         <>
-      
-       <Button color='success' onClick={()=>navigate('/action')} align>CREATE</Button>
-       <Container className="container">
+      <Space direction="vertical" style={{ width: '100%' }} >
+       <Button type="primary" danger onClick={()=>navigate('/action')} block>CREATE
+       </Button>
+       </Space>
+       <br/>
+       <br/>
+
+        <Container className="allpeople">
        <Row xs="3">
             {context.people.map((data,index)=>{
                 return(
@@ -36,7 +41,7 @@ export default function Allpeople()
                 )
             })}
           </Row>
-            </Container>    
+            </Container>     
             </>
     )
 }

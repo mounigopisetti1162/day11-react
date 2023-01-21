@@ -12,10 +12,10 @@ export default function CardComponent({data,id})
     const {avatar,name,field,division}=data
     return(
         <>
-        <Card
+        <Card className='card'
        
     >
-<CardBody>
+<CardBody className='cardbody'>
       <img alt="Sample" src={avatar} />
         <CardTitle tag="h5">{name}</CardTitle>
         <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -26,6 +26,7 @@ export default function CardComponent({data,id})
         </CardSubtitle>
     
                 <Button
+                className='button'
                     color="primary"
                     onClick={() =>
                       navigate(`/action/${data.id}`, {
@@ -36,6 +37,7 @@ export default function CardComponent({data,id})
                     Update
                   </Button>
                   <Button
+                  className='button'
                     color="warning"
                     onClick={() =>
                       navigate(`/action/${data.id}`, {
@@ -46,6 +48,7 @@ export default function CardComponent({data,id})
                   View
                   </Button>
 <Button color="error"
+className='button'
                     onClick={() => context.deleted(data.id)}
                     > Delete</Button>
                
